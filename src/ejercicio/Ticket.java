@@ -30,7 +30,7 @@ public class Ticket {
 	    if(productos.isEmpty())
 	    	throw new RuntimeException("ERROR: no hay productos.");
 	    if(productos.size() == 1)
-	        return productos.getFirst().toString();
+	        return productos.getFirst().nombre();
 
 	    Producto extremo = productos.getFirst();
 
