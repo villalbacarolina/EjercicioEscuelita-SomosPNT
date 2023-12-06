@@ -62,18 +62,14 @@ public class Supermercado{
 	}
 	
 	@Override
-	public String toString() { //devuelve info de todos los tickets
+	public String toString() { 
 		StringBuilder ticketsInfo = new StringBuilder();
 		
 		for(Ticket ticket: tickets.values())
-			ticketsInfo.append( toString(ticket.codigo()) ).append("\n");
-		ticketsInfo.append("=============================").append("\n")
-		   		   .append("Producto más caro: "  ).append( ticket.productoExtremo("caro").nombre() ).append("\n")
-		   		   .append("Producto más barato: ").append( ticket.productoExtremo("barato").nombre() );
-		
+			ticketsInfo.append(ticket.toString());
+				
 		return ticketsInfo.toString();
 	}
-
 
 	public static void main(String[] args) {
 		

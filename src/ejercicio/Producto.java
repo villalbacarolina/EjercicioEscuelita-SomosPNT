@@ -1,11 +1,15 @@
+/*
+linkedin.in/villalbacarolina  -   github.com/villalbacarolina
+*/
+
 package ejercicio;
 
 public abstract class Producto implements Comparable<Producto>{
 	
 	protected String nombre;
-	protected double precio;
+	protected int precio;
 	
-	public Producto(String nombre, double precio) {
+	public Producto(String nombre, int precio) {
 		if(nombre.equals(""))
 			throw new IllegalArgumentException("ERROR: nombre invalido.");
 		if(precio<=0)

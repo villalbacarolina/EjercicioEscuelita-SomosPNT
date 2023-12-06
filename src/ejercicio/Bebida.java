@@ -1,10 +1,14 @@
+/*
+linkedin.in/villalbacarolina  -   github.com/villalbacarolina
+*/
+
 package ejercicio;
 
 public class Bebida extends Producto{
 	
 	private double litros;
 	
-	public Bebida(String nombre, double precio, double litros) {
+	public Bebida(String nombre, int precio, double litros) {
 		super(nombre, precio);
 		if(litros<=0)
 			throw new IllegalArgumentException("ERROR: valor de litros invalido.");

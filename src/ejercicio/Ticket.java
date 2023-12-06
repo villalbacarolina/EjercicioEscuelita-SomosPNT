@@ -1,3 +1,7 @@
+/*
+linkedin.in/villalbacarolina  -   github.com/villalbacarolina
+*/
+
 package ejercicio;
 
 import java.util.LinkedList;
@@ -22,11 +26,11 @@ public class Ticket {
 		productos.add(p);
 	}
 	
-	public static Producto productoExtremo(String extremoBuscado) {
+	public static String productoExtremo(String extremoBuscado) {
 	    if(productos.isEmpty())
 	    	throw new RuntimeException("ERROR: no hay productos.");
 	    if(productos.size() == 1)
-	        return productos.getFirst();
+	        return productos.getFirst().toString();
 
 	    Producto extremo = productos.getFirst();
 
@@ -35,23 +39,26 @@ public class Ticket {
 	        	|| (extremoBuscado.equals("caro") && prod.compareTo(extremo)>0))
 	            extremo = prod;
 
-	    return extremo;
+	    return extremo.nombre();
 	}
 
-	public static Producto productoMasBarato(LinkedList<Producto> productos) {
+	public static String productoMasBarato(LinkedList<Producto> productos) {
 	    return productoExtremo("barato");
 	}
 
-	public static Producto productoMasCaro(LinkedList<Producto> productos) {
+	public static String productoMasCaro(LinkedList<Producto> productos) {
 	    return productoExtremo("caro");
 	}
 	
 	@Override
-	public String toString() { //devuelve info de todos los productos
+	public String toString() {
 		StringBuilder infoProductos = new StringBuilder();
 		
 		for( Producto prod: productos )
 			infoProductos.append( prod.toString() ).append("\n");
+		infoProductos.append("=============================").append("\n")
+		   		     .append("Producto más caro: "  ).append( productoExtremo("caro") ).append("\n")
+		   		     .append("Producto más barato: ").append( productoExtremo("barato") );
 		
 		return infoProductos.toString();
 	}
